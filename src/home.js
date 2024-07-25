@@ -9,7 +9,7 @@ function Home()
 
     const get_home_description = () => {
         return {
-            Quote: "DineNDash is the best place to get high quality meals and rest",
+            Quote: "DineNDash is the best place to get high quality meals and rest.",
             Author: "Robert Dash"
         };
     };
@@ -31,4 +31,27 @@ function Home()
         return "321 Dine Drive, Dashing, TX";
     }
 
+    return {get_home_title, get_home_description, get_home_hours, get_home_location};
 };
+
+function HomeRender()
+{
+    const home = Home();
+
+    const render = () =>
+    {
+        // Content div
+        const content = document.getElementById("content");
+
+        // Home Description
+        const description = document.createElement("h2");
+        description.innerText = home.get_home_description().Quote;
+
+        content.appendChild(description);
+
+    }
+
+    return {render};
+}
+
+export { HomeRender };
