@@ -42,6 +42,8 @@ function HomeRender()
     {
         // Content div
         const content = document.getElementById("content");
+        // Clear the div
+        content.textContent = "";
 
         // Home Description
         const description = document.createElement("h2");
